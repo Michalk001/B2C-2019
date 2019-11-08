@@ -1,0 +1,297 @@
+{
+  "employees": [
+    {
+      "id": "19283",
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "password": "876ee148d21b01a5286f5d8b8801f9282871bf2f",
+      "phoneNumber": "48111222333",
+      "login": "janko",
+      "email": "jan.ko@xxx.pl",
+      "Admin": "false",
+      "projects": [
+        {
+          "id": "1",
+          "hours": 22,
+          "removed": false
+        },
+        {
+          "id": "2",
+          "hours": 16,
+          "removed": false
+        },
+        {
+          "id": "io85VD2",
+          "removed": false
+        }
+      ]
+    },
+    {
+      "id": "09238",
+      "firstName": "Adam",
+      "lastName": "Nowak",
+      "password": "a8c99dba2386706a483b452f98293b06dfce565b",
+      "phoneNumber": "48111222333",
+      "email": "adam.Nowak@xxx.pl",
+      "login": "adano",
+      "Admin": false,
+      "projects": [
+        {
+          "id": "1",
+          "hours": 10,
+          "removed": true
+        },
+        {
+          "id": "2",
+          "hours": 20,
+          "removed": false
+        }
+      ]
+    },
+    {
+      "firstName": "Andrzej",
+      "lastName": "Hunt",
+      "password": "ff6fd82e76f1b4d6a11da71a25039c7b2eceef29",
+      "phoneNumber": "22",
+      "email": "Adnrzej.Hunt@xxx.pl",
+      "Admin": false,
+      "login": "andrzej",
+      "projects": [
+        {
+          "id": "1",
+          "hours": 3,
+          "removed": false
+        },
+        {
+          "id": "io85VD2",
+          "hours": 14,
+          "removed": false
+        },
+        {
+          "id": "Ts_sdf1",
+          "hours": 15,
+          "removed": false
+        }
+      ],
+      "id": "Zo0NRmT"
+    },
+    {
+      "firstName": "Bartek",
+      "lastName": "Lewandowski",
+      "phoneNumber": "595348726",
+      "login": "barlew",
+      "password": "eacd84c2aa0c362a629b12b6b081c00f8ca9593a",
+      "email": "Lewandowski@xxx.pl",
+      "isAdmin": false,
+      "projects": [
+        {
+          "id": "Ts_sdf1",
+          "hours": 15,
+          "removed": false
+        },
+        {
+          "id": "MC6wIdu",
+          "hours": 30,
+          "removed": false
+        }
+      ],
+      "id": "HjkF4IZ"
+    },
+    {
+      "firstName": "Maciej",
+      "lastName": "Wasilewski",
+      "email": "Wasilewski@xxx.pl",
+      "phoneNumber": "234125764",
+      "login": "macwas",
+      "password": "8b7b256b27c2561ea38c8d10ca6d25fabe5a275b",
+      "isAdmin": false,
+      "projects": [
+        {
+          "id": "iCeN_-b",
+          "hours": 12,
+          "removed": false
+        },
+        {
+          "id": "io85VD2",
+          "hours": 11,
+          "removed": true
+        }
+      ],
+      "id": "Mxsn_7u"
+    },
+    {
+      "firstName": "Edyta",
+      "lastName": "Olszewska",
+      "email": "Olszewska@xxx.pl",
+      "phoneNumber": "5479765373",
+      "login": "edyols",
+      "password": "d5c6dfb0aa4a5fd6140f102f7fc2340989be4782",
+      "isAdmin": false,
+      "projects": [
+        {
+          "id": "io85VD2",
+          "hours": 11,
+          "removed": false
+        },
+        {
+          "id": "oVXIdgS",
+          "hours": 31,
+          "removed": false
+        }
+      ],
+      "id": "lEXHVxa"
+    },
+    {
+      "firstName": "Radosław",
+      "lastName": "Kaczmarek",
+      "email": "Kaczmarek@xxx.pl",
+      "phoneNumber": "5479765373",
+      "login": "radkac",
+      "password": "dbd916fa7f4f2e573c5784d9c3d96c467f8ee850",
+      "isAdmin": false,
+      "projects": [
+        {
+          "id": "io85VD2",
+          "hours": 11,
+          "removed": false
+        },
+        {
+          "id": "Ts_sdf1",
+          "hours": 3,
+          "removed": false
+        }
+      ],
+      "id": "3gUV8Nh"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Głowacka",
+      "email": "Głowacka@xxx.pl",
+      "phoneNumber": "23414232",
+      "login": "annglo",
+      "password": "a5194494c02d545a8a0d70d2e85d5d171938834d",
+      "isAdmin": false,
+      "projects": [
+        {
+          "id": "iCeN_-b",
+          "hours": 7,
+          "removed": false
+        },
+        {
+          "id": "Ts_sdf1",
+          "hours": 10,
+          "removed": false
+        }
+      ],
+      "id": "P5Zdu15"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Project 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada velit sit amet enim feugiat, commodo facilisis ante dapibus. Curabitur tincidunt fringilla tortor, sed condimentum elit venenatis vel. Phasellus vel fermentum massa, sed interdum elit. Aliquam erat volutpat. Nulla egestas placerat erat, eget tincidunt mauris blandit eget. Aliquam euismod suscipit est, non efficitur orci facilisis at. Sed condimentum lectus a ultricies porta. Morbi lorem sem, rutrum at diam id, sagittis pulvinar magna. Nunc auctor libero id turpis suscipit, a sollicitudin purus hendrerit. Suspendisse et facilisis augue. Aliquam eleifend nisl vel magna condimentum, in dignissim neque elementum. Nulla varius iaculis sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam erat volutpat. Donec vel justo tempor, egestas sapien non, feugiat eros.\n\nCras ut dictum quam. Quisque orci risus, tempor sed lectus et, mollis rutrum nibh. Sed accumsan, diam et ultricies tempor, diam magna egestas magna, sed varius urna nulla a nibh. Proin tincidunt commodo blandit. Maecenas eget suscipit justo. Nam at dolor vel ligula aliquet euismod. Quisque ligula elit, venenatis id mattis non, aliquet et ante. Cras ultrices nisi et consectetur interdum. Curabitur eget hendrerit magna, a condimentum orci.",
+      "employees": [
+        {
+          "employeeID": "19283"
+        },
+        {
+          "employeeID": "09238"
+        },
+        {
+          "employeeID": "Zo0NRmT"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Project 2",
+      "description": "Sed eleifend rhoncus sapien, ullamcorper maximus augue elementum ac. Nunc elit mauris, tristique sed arcu non, fringilla venenatis metus. In at nunc eu libero dapibus interdum. Etiam suscipit turpis vel est congue finibus. Nulla facilisi. Nam laoreet lectus sit amet nibh viverra cursus. Nunc quis bibendum odio. Nullam a velit non mi malesuada accumsan eu ac lacus. Vestibulum a justo sit amet eros laoreet posuere. Sed ullamcorper enim orci, sit amet mollis lacus tincidunt eu. Phasellus aliquam imperdiet nisl vitae pellentesque. Etiam pharetra ante eu ante faucibus tincidunt. Nam scelerisque purus id mi scelerisque, a semper risus hendrerit. Nullam nec nunc sed risus dignissim suscipit eu a ipsum.",
+      "employees": [
+        {
+          "employeeID": "09238"
+        },
+        {
+          "employeeID": "19283"
+        }
+      ]
+    },
+    {
+      "name": "Project 3",
+      "description": "Maecenas pharetra urna erat, sit amet ullamcorper ante aliquet a. Donec ornare aliquam dolor, et porta ligula tristique sed. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque semper eu libero vitae imperdiet. Sed ac mi euismod, mollis erat condimentum, pulvinar augue. Praesent pulvinar lectus nec purus volutpat, vel pharetra turpis tristique. Sed sit amet massa tellus. Mauris at tempus sem, in viverra dui. Praesent dictum justo vitae mi congue mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur semper enim eget nisi posuere, vitae blandit est lobortis. Morbi luctus, purus vel suscipit interdum, arcu elit tincidunt orci, et sagittis lectus justo suscipit ligula. Nunc vitae leo id massa lacinia commodo.",
+      "id": "oVXIdgS",
+      "employees": [
+        {
+          "employeeID": "lEXHVxa"
+        }
+      ]
+    },
+    {
+      "name": "Project 4",
+      "description": "Donec elit mi, convallis ut ligula eu, bibendum mattis libero. Praesent fringilla massa vel libero suscipit, non vulputate metus pellentesque. Aenean imperdiet elit mauris, vitae mollis massa sollicitudin vel. Morbi ultrices semper augue quis tristique. Donec purus augue, dapibus at faucibus ut, faucibus sed ipsum. Curabitur ut nisi interdum, tristique elit et, mattis nibh. Integer ut sodales libero, ut elementum nibh. Vestibulum tellus erat, placerat eu est vel, dapibus venenatis mi. Nam dictum dolor elit, at sodales ante scelerisque at. Nulla maximus risus nec dui pretium molestie. Vivamus eget ex vel nisi ultricies maximus. Vivamus molestie elit sed diam condimentum condimentum sed in tellus. Fusce egestas imperdiet velit, ac tempor erat porttitor nec.",
+      "id": "Ts_sdf1",
+      "employees": [
+        {
+          "employeeID": "Zo0NRmT"
+        },
+        {
+          "employeeID": "HjkF4IZ"
+        },
+        {
+          "employeeID": "3gUV8Nh"
+        },
+        {
+          "employeeID": "P5Zdu15"
+        }
+      ]
+    },
+    {
+      "name": "Project 5",
+      "description": "Donec elit mi, convallis ut ligula eu, bibendum mattis libero. Praesent fringilla massa vel libero suscipit, non vulputate metus pellentesque. Aenean imperdiet elit mauris, vitae mollis massa sollicitudin vel. Morbi ultrices semper augue quis tristique. Donec purus augue, dapibus at faucibus ut, faucibus sed ipsum. Curabitur ut nisi interdum, tristique elit et, mattis nibh. Integer ut sodales libero, ut elementum nibh. Vestibulum tellus erat, placerat eu est vel, dapibus venenatis mi. Nam dictum dolor elit, at sodales ante scelerisque at. Nulla maximus risus nec dui pretium molestie. Vivamus eget ex vel nisi ultricies maximus. Vivamus molestie elit sed diam condimentum condimentum sed in tellus. Fusce egestas imperdiet velit, ac tempor erat porttitor nec.",
+      "id": "MC6wIdu",
+      "employees": [
+        {
+          "employeeID": "HjkF4IZ"
+        },
+        {
+          "employeeID": "jHMj9wV"
+        }
+      ]
+    },
+    {
+      "name": "Project 6",
+      "description": "TT\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut malesuada velit sit amet enim feugiat, commodo facilisis ante dapibus. Curabitur tincidunt fringilla tortor, sed condimentum elit venenatis vel. Phasellus vel fermentum massa, sed interdum elit. Aliquam erat volutpat. Nulla egestas placerat erat, eget tincidunt mauris blandit eget. Aliquam euismod suscipit est, non efficitur orci facilisis at. Sed condimentum lectus a ultricies porta. Morbi lorem sem, rutrum at diam id, sagittis pulvinar magna. Nunc auctor libero id turpis suscipit, a sollicitudin purus hendrerit. Suspendisse et facilisis augue. Aliquam eleifend nisl vel magna condimentum, in dignissim neque elementum. Nulla varius iaculis sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam erat volutpat. Donec vel justo tempor, egestas sapien non, feugiat eros.",
+      "id": "io85VD2",
+      "employees": [
+        {
+          "employeeID": "Zo0NRmT"
+        },
+        {
+          "employeeID": "Mxsn_7u"
+        },
+        {
+          "employeeID": "lEXHVxa"
+        },
+        {
+          "employeeID": "3gUV8Nh"
+        },
+        {
+          "employeeID": "19283"
+        }
+      ]
+    },
+    {
+      "name": "Project 7",
+      "description": "Project 7 Project 7",
+      "id": "iCeN_-b",
+      "employees": [
+        {
+          "employeeID": "Mxsn_7u"
+        },
+        {
+          "employeeID": "P5Zdu15"
+        }
+      ]
+    }
+  ]
+}

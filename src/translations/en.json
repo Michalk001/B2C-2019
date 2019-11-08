@@ -1,0 +1,95 @@
+{
+    "employee": {
+        "name": "Employee name",
+        "totalHours": "Total hours",
+        "totalActiveProjects": "Quantity of active projects",
+        "activeProjects": "Active projects",
+        "employeeReport": "Employee report",
+        "addEmployee": "Add New Employee",
+        "firstName": "First name",
+        "lastName": "Last Name",
+        "email": "E-mail",
+        "projects": "Projects",
+        "removeEmployee": "Remove Employee",
+        "select": "Select employee",
+        "editEmployee": "Edit Employee",
+        "toDetails": "Go to details",
+        "typeAccount": "Account type",
+        "standard": "Normal",
+        "admin":"Admin"
+    },
+    "button": {
+        "save": "Save",
+        "add": "Add",
+        "accept": "Accept",
+        "update": "Update",
+        "remove": "Remove",
+        "cancel": "Cancel",
+        "ok": "Ok",
+        "reportDownload": "Download report"
+    },
+    "common": {
+        "addHours": "Add hours",
+        "quantityHours": "Quantity hours",
+        "phoneNumber": "Phone number",
+        "emailAdress": "Adress E-Mail",
+        "loading": "Loading",
+        "adminPanel": "Administrator panel",
+        "userPanel": "User panel",
+        "singOut": "Sing Out",
+        "singUp": "Sing Up",
+        "login": "Login",
+        "password": "Password",
+        "singUpDes": "Sing Up",
+        "loginError": "Incorrect login or password"
+    },
+    "adminPanel": {
+        "projectManagement": "Project management",
+        "addProject": "Add new project",
+        "removeProject": "Remove project",
+        "projectsList": "Projects list",
+        "employeeManagement": "Employee management",
+        "addEmployee": "Add new employee",
+        "removeEmployee": "Remove employee",
+        "employeesList": "Employees list",
+        "projectsList2": "Projects List"
+    },
+    "project": {
+        "totalHoursShort": "Total hours",
+        "addProject": "Add new project",
+        "name": "Project name",
+        "description": "Description project",
+        "editProject": "Edit project",
+        "select": "Select project",
+        "removeProject": "Remove project",
+        "informationProject": "Project information",
+        "currentyHours": "Quantity hours of current employees",
+        "totalHours": "Quantity hours of all employees",
+        "quantityEmployees": "Quantity employees",
+        "listEmployees": "Employees list",
+        "noEmployees": "No employees assigned",
+        "noProject": "Brak aktywnych projektów"
+    },
+    "messageBox": {
+        "error": "Error occured",
+        "addEmployee": "Employee added",
+        "removeEmployeeConf": "Do you want to delete an employee?",
+        "editEmployee": "Employee details updated",
+        "addProject": "New project added",
+        "removeProjectConf": "Do you want to delete the project?",
+        "editProject": "Project data updated",
+        "loginBusy": "Login is busy"
+    },
+    "pdf": {
+        "employeeDetails": "Employee Details",
+        "employee": "Employee",
+        "projectName": "Project name",
+        "projectDetails": "Project details",
+        "loading": "Document is generat",
+        "downloadReport": "Download PDF report" 
+    },
+    "readme": {
+        "adminData":"User login data with administrator rights",
+        "userData":"User login data without administrator rights"
+    }
+}

@@ -1,0 +1,210 @@
+.form-editor {
+    padding-top: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    &__box {
+        background-color: #fff;
+        width: inherit;
+        padding: 25px 20px;
+        margin-bottom: 50px;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        width: inherit
+    }
+
+    &__content {
+        width: 33%;
+        padding-bottom: 10px;
+
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+
+        &--large {
+            width: 100%
+        }
+
+        &--inline {
+            display: flex;
+
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
+    }
+
+    &__select {
+        width: 200px;
+        padding-top: 7px;
+        cursor: pointer;
+        &--large{
+            width: 100%;
+        }
+        @media (max-width: 767px) {
+            width: 100%
+        }
+    }
+
+    &__input {
+        background: #fff;
+        box-shadow: 0 1px 2px -1px rgba(0, 0, 0, 0.36);
+        border: 1px solid #d9dee8;
+        color: #555;
+        display: inline-block;
+        font-size: 14px;
+        height: 30px;
+        padding: 0 10px;
+        vertical-align: middle;
+        width: 200px;
+        box-sizing: border-box;
+        margin-top: 4px;
+
+        @media (max-width: 767px) {
+            width: 100%
+        }
+
+        &--large {
+            width: 100%
+        }
+
+        &--description {
+            width: 100%;
+            min-height: 200px;
+            padding: 10px 15px;
+        }
+    }
+
+    &__fieldset {
+        padding-top: 10px;
+    }
+
+    &__button {
+        background-color: #f6f6f9;
+        border: 1px solid #d9dee8;
+        border-radius: 1px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 0 5px 8px 0;
+        padding: 6px 17px;
+        transition: border 0.2s, background-color 0.2s, color 0.2s;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+
+        color: #555;
+        cursor: pointer;
+
+        &:hover {
+            border-color: #a9c2e1;
+        }
+
+        &--checkbox {
+            visibility: hidden;
+            position: absolute;
+            left: -999999999px;
+
+            &:checked+.advert-editor__button {
+                background-color: #00bffd;
+                border-color: #00bffd;
+                border-radius: 2px;
+                color: #fff;
+            }
+        }
+
+        &--large {
+            width: 100%;
+        }
+
+        &--upload {
+            position: relative;
+            margin: 0 auto;
+            margin-top: 15px;
+            display: block;
+            width: max-content;
+            font-size: 18px;
+        }
+
+
+
+        &--submit {
+            margin: 0 auto;
+            font-size: 22px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #142355;
+
+            &:hover {
+                background-color: #00559b;
+
+            }
+        }
+
+        &--red {
+            background: #c82814;
+            box-shadow: 0 1px 2px #af4d41;
+            color: #fff;
+
+            &:hover {
+                background-color: #9c1907;
+
+            }
+        }
+
+        &--employee {
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+    }
+
+    &__txt {
+        font-size: 18px;
+        color: #555;
+
+        @media (max-width: 767px) {
+            margin-bottom: 8px;
+
+        }
+
+        &--rigth-gap {
+            margin-right: 20px;
+
+            @media (max-width: 767px) {
+                margin-right: 0;
+
+            }
+        }
+
+        &--position-employee-name {
+            top: 9px;
+            position: relative;
+            margin-right: 12px;
+        }
+
+        &--bold {
+            font-weight: 700;
+        }
+
+        &--subtitle {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        &--description {
+            padding: 20px 25px 20px 25px;
+            border: 1px solid #d9dee8;
+            border-radius: 1px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+            margin: 15px;
+        }
+    }
+
+
+}

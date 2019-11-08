@@ -1,0 +1,95 @@
+{
+    "employee": {
+        "name": "Imie Pracownika",
+        "totalHours": "Ilość godzin łącznie",
+        "totalActiveProjects": "Liczba aktywnych projektów",
+        "activeProjects": "Aktywne Projekty",
+        "employeeReport": "Raport o pracowniku",
+        "addEmployee": "Dodanie nowego pracownika",
+        "firstName": "Imię",
+        "lastName": "Nazwisko",
+        "email": "E-mail",
+        "projects": "Projekty",
+        "removeEmployee": "Usuń Pracownika",
+        "select": "Wybierz pracownika",
+        "editEmployee": "Edycja Danych Pracownika",
+        "toDetails": "Przejdz to szczegółów",
+        "typeAccount": "Typ konta",
+        "standard": "Zwykły",
+        "admin":"Admin"
+    },
+    "button": {
+        "save": "Zapisz",
+        "add": "Dodaj",
+        "accept": "Zatwierdz",
+        "update": "Zaktualizuj",
+        "remove": "Usuń",
+        "cancel": "Anuluj",
+        "ok": "Ok",
+        "reportDownload": "Pobierz raport"
+    },
+    "common": {
+        "addHours": "Dodaj godziny",
+        "quantityHours": "Liczba godzin",
+        "phoneNumber": "Numer telefonu",
+        "emailAdress": "Adres E-Mail",
+        "loading": "Ładowanie",
+        "adminPanel": "Panel administratora",
+        "userPanel": "Panel użytkownika",
+        "singOut": "Wyloguj",
+        "singUp": "Zaloguj",
+        "login": "Login",
+        "password": "Hasło",
+        "singUpDes": "Zaloguj się",
+        "loginError": "Błędny login lub hasło"
+    },
+    "adminPanel": {
+        "projectManagement": "Zarządzanie Projektami",
+        "addProject": "Dodanie nowego projektu",
+        "removeProject": "Usunięcie projektu",
+        "projectsList": "Lista projektów",
+        "employeeManagement": "Zarządanie Pracownikami",
+        "addEmployee": "Dodanie nowego pracownika",
+        "removeEmployee": "Usunięcie pracownika",
+        "employeesList": "Lista Pracowników",
+        "projectsList2": "Lista Projektów"
+    },
+    "project": {
+        "totalHoursShort": "Ilość godzin łącznie",
+        "addProject": "Dodaj Nowy Projekt",
+        "name": "Nazwa Projektu",
+        "description": "Opis projektu",
+        "editProject": "Edycja Projektu",
+        "select": "Wybierz projekt",
+        "removeProject": "Usuń  Projekt",
+        "informationProject": "Informacje o projekcie",
+        "currentyHours": "Liczba godzin aktualnych pracowników",
+        "totalHours": "Liczba godzin wszystkich pracowników",
+        "quantityEmployees": "Liczba pracowników",
+        "listEmployees": "Lista Pracowników",
+        "noEmployees": "Brak przypisanych pracowników ",
+        "noProject": "Brak aktywnych projektów"
+    },
+    "messageBox": {
+        "error": "Wystąpił błąd",
+        "addEmployee": "Dodano pracownika",
+        "removeEmployeeConf": "Czy chcesz usunąć pracownika?",
+        "editEmployee": "Zaktualizowano dane pracownika",
+        "addProject": "Dodano nowy projekt",
+        "removeProjectConf": "Czy chcesz usunąć projekt?",
+        "editProject": "Zaktualizowano dane pracownika",
+        "loginBusy": "Login jest już zajęty"
+    },
+    "pdf": {
+        "employeeDetails": "Dane Pracownika",
+        "employee": "Pracownik",
+        "projectName": "Nazwa projektu",
+        "projectDetails": "Dane Projektu",
+        "loading": "Generowanie dokumentu",
+        "downloadReport": "Pobierz raport PDF" 
+    },
+    "readme": {
+        "adminData":"Dane użytkownika z uprawnieniami administatora",
+        "userData":"Dane użytkownika z uprawnieniami standardowymi"
+    }
+}

@@ -1,0 +1,41 @@
+.footer {
+    background: #f0f2f6;
+    height: 100px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    
+    &__social-position{
+        padding: 0;
+        padding-top: 20px;
+        display: table;
+        position: relative;
+        list-style-type: none;
+        margin: 0 auto;
+        overflow: hidden;
+        &--element{
+            display: block;
+            float: left;
+            margin: 0 15px;
+
+        }
+    }
+
+    &__soc{
+        height: 50px;
+        width: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &--linkedin{
+            
+            display: block;
+            background-image: url("/lin.svg");
+        }
+        &--githube{
+            display: block;
+            background-image: url("/git.svg");
+        }
+    }
+}
+
