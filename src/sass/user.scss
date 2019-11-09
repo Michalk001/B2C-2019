@@ -6,7 +6,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 50px 25px;
-   
+
     @media (max-width:1023px) {
         justify-content: space-around;
     }
@@ -33,7 +33,8 @@
         @media (max-width:500px) {
             height: max-content;
         }
-        &--large{
+
+        &--large {
             width: 100%;
         }
     }
@@ -80,6 +81,7 @@
 .view {
     padding-top: 45px;
     padding-bottom: 60px;
+
     &__container {
         display: block;
         max-width: 1180px;
@@ -115,7 +117,8 @@
             white-space: pre;
         }
 
-        &--phone, &--email {
+        &--phone,
+        &--email {
             margin-right: 0;
             margin-left: auto;
             padding-right: 20px;
@@ -132,7 +135,7 @@
                 margin-top: 15px;
             }
         }
-        
+
         &--title {
             width: 100%;
             font-size: 22px;
@@ -141,6 +144,11 @@
 
         &--project-name-position {
             padding-top: 5px;
+            padding-bottom: 15px;
+            @media (max-width:500px) {
+                width: 100%;
+                text-align: center;
+            }
         }
     }
 
@@ -240,13 +248,16 @@
             margin: 15px 0px;
 
         }
-        &--projects-width{
+
+        &--projects-width {
             width: 400px;
+
             @media (max-width:767px) {
-      
+
                 width: 100%;
             }
         }
+
         &--employees {
             display: inline-block;
             margin: 15px 0px;
@@ -271,10 +282,14 @@
         &--add-hour {
             top: -4px;
             position: relative;
+            margin-right: 80px;
 
-            @media (max-width:500px) {
+            @media (max-width:1023px) {
                 text-align: center;
-                margin-top: 15px;
+            }
+
+            @media (max-width:600px) {
+                margin-right: 0;
             }
         }
     }
@@ -296,6 +311,16 @@
             margin-bottom: 10px;
             margin-top: 10px;
             width: 100%;
+
+        }
+
+        &--add-hour {
+            @media (max-width:600px) {
+                margin-bottom: 10px;
+                margin-top: 10px;
+                width: 100%;
+
+            }
 
         }
 
@@ -401,7 +426,8 @@
         font-weight: 600;
         position: relative;
         width: 100%;
-        &--error{
+
+        &--error {
             text-align: center;
             color: #c82814;
             font-size: 18px;
@@ -418,13 +444,13 @@
             margin-top: 30px;
             margin-bottom: 0;
         }
-       
-        &--error{
+
+        &--error {
             margin-top: 15px;
             margin-bottom: 0;
         }
-       
-       
+
+
     }
 
     &__input {

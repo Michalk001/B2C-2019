@@ -31,6 +31,7 @@
     "common": {
         "addHours": "Add hours",
         "quantityHours": "Quantity hours",
+        "yoursQuantityHours": "Yours quantity hours",
         "phoneNumber": "Phone number",
         "emailAdress": "Adress E-Mail",
         "loading": "Loading",

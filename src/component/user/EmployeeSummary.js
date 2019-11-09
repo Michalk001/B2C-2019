@@ -18,6 +18,7 @@ const EmployeeSummary = (props) => {
     const [employeeRaw, setEmployeeRaw] = useState(null);
     const [addHours, setAddHours] = useState([]);
     const [loginUserID, setLoginUserID] = useState(null);
+    const [resultUpdate, setResultUpdate] = useState(null)
 
     const updateAddHouers = (e) => {
         setAddHours({ ...addHours, [e.name]: e.value })
@@ -56,8 +57,18 @@ const EmployeeSummary = (props) => {
         }
         else
             pro.hours = parseInt(addHours[idProject], 10);
+        if (pro.hours < 0)
+            pro.hours = 0
+
+
+        const resCha = employee.projects.find((x) => {
+            return x.id == idProject
+        })
+        resCha.hours = pro.hours
+        setResultUpdate(pro.hours)
         await eF.Update(employeeRaw);
-        await getEmployee();
+
+
     }
 
     useEffect(() => {
@@ -67,7 +78,8 @@ const EmployeeSummary = (props) => {
         }
     }, [])
 
-
+    useEffect(() => {
+    }, [resultUpdate])
 
     return (
         employee != null &&
@@ -110,12 +122,14 @@ const EmployeeSummary = (props) => {
                                         <span className="view__txt">{t('common.quantityHours')}: {x.hours}</span>
                                     </div>
                                 </div>
-                                {loginUserID && loginUserID == employee.id &&
+                                {loginUserID && loginUserID == employee.id && <>
+                                  
                                     <div className="view__content--add-hour">
                                         <span className="view__txt"> {t('common.addHours')}: </span>
                                         <input type="number" value={addHours[x.id] ? addHours[x.id] : ""} name={x.id} className="view__input" onChange={x => updateAddHouers(x.target)} />
                                         <span className="view__button view__button--add-hour" onClick={z => addHoursProject(x.id)}> {t('button.accept')}</span>
                                     </div>
+                                </>
                                 }
                             </div>
                         ))
@@ -126,7 +140,7 @@ const EmployeeSummary = (props) => {
                     <div className="view__txt view__txt--title">{t('employee.employeeReport')}</div>
                     {employee != null && <PDFDownloadLink
                         document={<EmployeePDF data={employee} />}
-                        fileName={`${employee.firstName}-${employee.lastName}-${employee.id}.pdf`} 
+                        fileName={`${employee.firstName}-${employee.lastName}-${employee.id}.pdf`}
                         className="view__button view__button--report"
                     >
                         {({ blob, url, loading, error }) =>

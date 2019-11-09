@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next';
 
 function ProjectPDF(props) {
     const { t } = useTranslation('common');
-    console.log(props.data)
     Font.register({
         family: 'Rajdhani', fonts: [
             { src: "/font/Rajdhani.ttf" },

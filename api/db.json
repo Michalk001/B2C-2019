@@ -17,12 +17,13 @@
         },
         {
           "id": "2",
-          "hours": 16,
+          "hours": 46,
           "removed": false
         },
         {
           "id": "io85VD2",
-          "removed": false
+          "removed": false,
+          "hours": 13
         }
       ]
     },
@@ -252,9 +253,6 @@
       "employees": [
         {
           "employeeID": "HjkF4IZ"
-        },
-        {
-          "employeeID": "jHMj9wV"
         }
       ]
     },

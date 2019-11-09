@@ -49,7 +49,6 @@ const Project = () => {
     const saveProject = async (event) => {
         event.preventDefault();
         await pF.Save(newProjectValue).then(data => {
-            console.log(data)
             if (data.id) {
                 setInfoBoxText(t('messageBox.addProject'))
             }

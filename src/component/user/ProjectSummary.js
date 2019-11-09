@@ -80,11 +80,13 @@ const ProjectSummary = (props) => {
     const checkCurrentUser = async () => {
         if (Cookies.get('id')) {
             const employee = await eF.GetById(Cookies.get('id'))
-            const checkPro = await Promise.all(employee.projects.filter(x => {
-                return x.id == props.match.params.id && x.removed != true
-            }))
-            if (checkPro.length > 0)
-                setIsCurrentUser(true)
+            if (employee.id) {
+                const checkPro = await Promise.all(employee.projects.filter(x => {
+                    return x.id == props.match.params.id && x.removed != true
+                }))
+                if (checkPro.length > 0)
+                    setIsCurrentUser(true)
+            }
         }
     }
 
@@ -97,12 +99,14 @@ const ProjectSummary = (props) => {
                         <div className="view__txt view__txt--project-name-position ">
                             <span>{t('project.name')}:</span>   <span className="view__txt--bold">{project.name}</span>
                         </div>
-                        {isCurrentUser == true && <div className="view__content--add-hour">
-                            <span className="view__txt"> {t('common.addHours')}: </span>
-                            <input type="number" className="view__input" onChange={x => setAddHoursValue(x.target.value)} />
-                            <span className="view__button view__button--add-hour" onClick={x => addHours()} > {t('button.accept')}</span>
-                        </div>
-                        }
+                        {isCurrentUser == true && <>
+                            <span className="view__txt view__txt--project-name-position"> {t('common.yoursQuantityHours')}: {(project.employees.find(x => { return x.id == Cookies.get('id') })).hours}</span>
+                            <div className="view__content--add-hour">
+                                <span className="view__txt"> {t('common.addHours')}: </span>
+                                <input type="number" className="view__input view__input--add-hour" onChange={x => setAddHoursValue(x.target.value)} />
+                                <span className="view__button view__button--add-hour" onClick={x => addHours()} > {t('button.accept')}</span>
+                            </div>
+                        </>}
 
                     </div>
 
@@ -139,7 +143,7 @@ const ProjectSummary = (props) => {
                     <div className="view__txt view__txt--title">Raport</div>
                     {project != null && <PDFDownloadLink
                         document={<ProjectPDF data={project} />}
-                        fileName={`${project.name}-${project.id}.pdf`} 
+                        fileName={`${project.name}-${project.id}.pdf`}
                         className="view__button view__button--report"
                     >
                         {({ blob, url, loading, error }) =>
