@@ -150,8 +150,17 @@
                 text-align: center;
             }
         }
+        
     }
-
+    &__txt-error-page-screen{
+        font-size: 24px;
+        color: #000;
+        text-align: center;
+        &--code{
+            margin-bottom: 10px;
+            font-size: 46px;
+        }
+    }
     &__row {
         display: flex;
         flex-wrap: wrap;

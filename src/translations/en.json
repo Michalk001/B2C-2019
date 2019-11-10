@@ -92,5 +92,8 @@
     "readme": {
         "adminData":"User login data with administrator rights",
         "userData":"User login data without administrator rights"
+    },
+    "error": {
+        "notFoundPage": "PAGE NOT FOUND"
     }
 }

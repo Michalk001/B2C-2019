@@ -16,7 +16,7 @@
         "toDetails": "Przejdz to szczegółów",
         "typeAccount": "Typ konta",
         "standard": "Zwykły",
-        "admin":"Admin"
+        "admin": "Admin"
     },
     "button": {
         "save": "Zapisz",
@@ -87,10 +87,13 @@
         "projectName": "Nazwa projektu",
         "projectDetails": "Dane Projektu",
         "loading": "Generowanie dokumentu",
-        "downloadReport": "Pobierz raport PDF" 
+        "downloadReport": "Pobierz raport PDF"
     },
     "readme": {
-        "adminData":"Dane użytkownika z uprawnieniami administatora",
-        "userData":"Dane użytkownika z uprawnieniami standardowymi"
+        "adminData": "Dane użytkownika z uprawnieniami administatora",
+        "userData": "Dane użytkownika z uprawnieniami standardowymi"
+    },
+    "error": {
+        "notFoundPage": "NIE ZNALEZIONO STRONY"
     }
 }

@@ -1,5 +1,4 @@
 
-
 import {
     BrowserRouter,
     Route,
@@ -18,6 +17,8 @@ import EmployeeSummary from './component/user/EmployeeSummary';
 import ProjectSummary from './component/user/ProjectSummary';
 import Login from './component/account/Login';
 import Management from './component/management/Management';
+import NoMatch from './component/mainPage/NoMatch'
+
 import { I18nextProvider } from 'react-i18next';
 
 import Cookies from 'js-cookie';
@@ -64,8 +65,10 @@ const AdminRoute = ({ component: Component, ...rest }) => (
 export const App = () => {
     const [isLogin, setIsLogin] = useState(checkIsLogin());
     const [isAdmin, setIsAdmin] = useState(checkIsAdmin());
+  
     return (
         <I18nextProvider i18n={i18nInit()}>
+        
             <BrowserRouter>
                 <AuthContext.Provider
                     value={
@@ -89,6 +92,9 @@ export const App = () => {
                                 <AdminRoute path="/management/" component={Management} />
                                 <UserRoute path='/protected' component={Management} />
                                 <Route path="/login" component={Login} />
+                                <UserRoute component={NoMatch} />
+                             
+                              
                             </Switch>
 
                         </div>
