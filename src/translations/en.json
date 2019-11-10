@@ -94,6 +94,8 @@
         "userData":"User login data without administrator rights"
     },
     "error": {
-        "notFoundPage": "PAGE NOT FOUND"
+        "notFoundPage": "PAGE NOT FOUND",
+        "notFoundProject": "PAGE NOT PROJECT",
+        "notFoundEmployee": "PAGE NOT EMPLOYEE"
     }
 }

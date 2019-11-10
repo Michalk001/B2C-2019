@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 import { useTranslation } from 'react-i18next';
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import ProjectPDF from "../pdfGeneration/ProjectPDF";
+import NoMatch from "../mainPage/NoMatch";
 
 
 const ProjectSummary = (props) => {
@@ -17,11 +18,18 @@ const ProjectSummary = (props) => {
     const [projectRaw, setProjectRaw] = useState(null);
     const [isCurrentUser, setIsCurrentUser] = useState(false);
     const [addHoursValue, setAddHoursValue] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+   
+   
     const getProject = async () => {
-
 
         const id = props.match.params.id;
         const projectTMP = await pF.GetById(id);
+        if(!projectTMP.id){
+            setIsLoading(false)
+            return
+        }
+
         setProjectRaw(projectTMP);
         const employees = await getEmployeesList(projectTMP.employees, id)
 
@@ -31,7 +39,7 @@ const ProjectSummary = (props) => {
                 totalActiveHours += x.hours;
         })
         setProject({ ...projectTMP, employees: employees, totalActiveHours: totalActiveHours })
-
+        setIsLoading(false)
     }
 
     const addHours = async () => {
@@ -90,70 +98,73 @@ const ProjectSummary = (props) => {
         }
     }
 
-    return (
-        project &&
-        <div className="view">
-            <div className="view__container view__container--summmary">
-                <div className="view__row view__row--margin-bottom">
-                    <div className="view__content view__content--inline-flex">
-                        <div className="view__txt view__txt--project-name-position ">
-                            <span>{t('project.name')}:</span>   <span className="view__txt--bold">{project.name}</span>
-                        </div>
-                        {isCurrentUser == true && <>
-                            <span className="view__txt view__txt--project-name-position"> {t('common.yoursQuantityHours')}: {(project.employees.find(x => { return x.id == Cookies.get('id') })).hours}</span>
-                            <div className="view__content--add-hour">
-                                <span className="view__txt"> {t('common.addHours')}: </span>
-                                <input type="number" className="view__input view__input--add-hour" onChange={x => setAddHoursValue(x.target.value)} />
-                                <span className="view__button view__button--add-hour" onClick={x => addHours()} > {t('button.accept')}</span>
+    return (<>
+        {project == null && !isLoading && <NoMatch text={t('error.notFoundProject')} />}
+        {project && !isLoading &&
+            <div className="view">
+                <div className="view__container view__container--summmary">
+                    <div className="view__row view__row--margin-bottom">
+                        <div className="view__content view__content--inline-flex">
+                            <div className="view__txt view__txt--project-name-position ">
+                                <span>{t('project.name')}:</span>   <span className="view__txt--bold">{project.name}</span>
                             </div>
-                        </>}
-
-                    </div>
-
-                </div>
-                <div className="view__row view__row--margin-bottom">
-                    <div className="view__txt ">{t('project.totalHoursShort')}: {project.totalActiveHours} </div>
-                    <div className="view__txt ">{t('project.quantityEmployees')}: {(project.employees.filter((y) => {
-                        return y.removed != true
-                    })).length} </div>
-                </div>
-                <div className="view__row view__row--margin-bottom">
-                    <div className="view__txt view__txt--title">{t('project.description')}  </div>
-                    <div className="view__content view__content--description">
-                        {project.description}
-                    </div>
-                </div>
-                <div className="view__row">
-                    <div className="view__txt view__txt--title">{t('project.listEmployees')}:  </div>
-                    <div className="view__content view__content--summary">
-                        {project.employees.map((x, index) => (
-                            x.removed != true &&
-
-                            <Link key={x.id} className="view__button view__button--employee" to={`/employee/${x.id}`}>
-                                <div >
-                                    {x.firstName} {x.lastName}
+                            {isCurrentUser == true && <>
+                                <span className="view__txt view__txt--project-name-position"> {t('common.yoursQuantityHours')}: {(project.employees.find(x => { return x.id == Cookies.get('id') })).hours}</span>
+                                <div className="view__content--add-hour">
+                                    <span className="view__txt"> {t('common.addHours')}: </span>
+                                    <input type="number" className="view__input view__input--add-hour" onChange={x => setAddHoursValue(x.target.value)} />
+                                    <span className="view__button view__button--add-hour" onClick={x => addHours()} > {t('button.accept')}</span>
                                 </div>
-                            </Link>
+                            </>}
 
-                        ))
-                        }
+                        </div>
+
                     </div>
-                </div>
-                <div className="view__row">
-                    <div className="view__txt view__txt--title">Raport</div>
-                    {project != null && <PDFDownloadLink
-                        document={<ProjectPDF data={project} />}
-                        fileName={`${project.name}-${project.id}.pdf`}
-                        className="view__button view__button--report"
-                    >
-                        {({ blob, url, loading, error }) =>
-                            loading ? t('pdf.loading') : t('pdf.downloadReport')
-                        }
-                    </PDFDownloadLink>}
+                    <div className="view__row view__row--margin-bottom">
+                        <div className="view__txt ">{t('project.totalHoursShort')}: {project.totalActiveHours} </div>
+                        <div className="view__txt ">{t('project.quantityEmployees')}: {(project.employees.filter((y) => {
+                            return y.removed != true
+                        })).length} </div>
+                    </div>
+                    <div className="view__row view__row--margin-bottom">
+                        <div className="view__txt view__txt--title">{t('project.description')}  </div>
+                        <div className="view__content view__content--description">
+                            {project.description}
+                        </div>
+                    </div>
+                    <div className="view__row">
+                        <div className="view__txt view__txt--title">{t('project.listEmployees')}:  </div>
+                        <div className="view__content view__content--summary">
+                            {project.employees.map((x, index) => (
+                                x.removed != true &&
+
+                                <Link key={x.id} className="view__button view__button--employee" to={`/employee/${x.id}`}>
+                                    <div >
+                                        {x.firstName} {x.lastName}
+                                    </div>
+                                </Link>
+
+                            ))
+                            }
+                        </div>
+                    </div>
+                    <div className="view__row">
+                        <div className="view__txt view__txt--title">Raport</div>
+                        {project != null && <PDFDownloadLink
+                            document={<ProjectPDF data={project} />}
+                            fileName={`${project.name}-${project.id}.pdf`}
+                            className="view__button view__button--report"
+                        >
+                            {({ blob, url, loading, error }) =>
+                                loading ? t('pdf.loading') : t('pdf.downloadReport')
+                            }
+                        </PDFDownloadLink>}
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+
+        }
+    </>)
 
 }
 

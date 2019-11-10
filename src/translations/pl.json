@@ -94,6 +94,8 @@
         "userData": "Dane użytkownika z uprawnieniami standardowymi"
     },
     "error": {
-        "notFoundPage": "NIE ZNALEZIONO STRONY"
+        "notFoundPage": "NIE ZNALEZIONO STRONY",
+        "notFoundProject": "NIE ZNALEZIONO PROJEKTU",
+        "notFoundEmployee": "NIE ZNALEZIONO PRACOWNIKA"
     }
 }
