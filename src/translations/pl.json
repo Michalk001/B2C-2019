@@ -78,7 +78,7 @@
         "editEmployee": "Zaktualizowano dane pracownika",
         "addProject": "Dodano nowy projekt",
         "removeProjectConf": "Czy chcesz usunąć projekt?",
-        "editProject": "Zaktualizowano dane pracownika",
+        "editProject": "Zaktualizowano dane projektu",
         "loginBusy": "Login jest już zajęty"
     },
     "pdf": {

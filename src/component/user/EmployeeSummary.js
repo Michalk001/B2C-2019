@@ -45,7 +45,11 @@ const EmployeeSummary = (props) => {
         let projectList = [];
         await Promise.all(list.map(async (x, index) => {
             const project = await pF.GetById(x.id)
-            projectList.push({ id: project.id, name: project.name, hours: x.hours !== undefined ? parseInt(x.hours, 10) : 0, removed: x.removed !== undefined ? x.removed : false })
+
+            let removed = false
+            if (project.removed || x.removed)
+                removed = true
+            projectList.push({ id: project.id, name: project.name, hours: x.hours !== undefined ? parseInt(x.hours, 10) : 0, removed: removed })
         }))
         return projectList;
     }

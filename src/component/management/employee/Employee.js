@@ -122,12 +122,14 @@ const Employee = () => {
                     setInfoBoxText(t('messageBox.error'))
             }
             setInfoBox(true)
+            getEmployeeList();
         })
+        
     }
-    const deleteEmployee = (remove) => {
+    const deleteEmployee = async (remove) => {
         if (remove) {
             eF.Delete(deleteIdEmployee);
-            getEmployeeList();
+            await getEmployeeList();
         }
 
     }

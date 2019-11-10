@@ -1,10 +1,10 @@
-
-
+import config from '../config.json'
+import Cookies from 'js-cookie';
 class ProjectFetch {
 
     async Get() {
         let result = [];
-        await fetch("http://localhost:4000/projects", {
+        await fetch(`${config.apiRoot}/projects`, {
             method: "get",
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -21,10 +21,11 @@ class ProjectFetch {
     }
     async Save(obj) {
         let result = [];
-        await fetch("http://localhost:4000/projects", {
+        await fetch(`${config.apiRoot}/projects`, {
             method: "post",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
+                'Authorization': 'Bearer ' + Cookies.get('token'),
             },
             body: JSON.stringify(obj)
         })
@@ -36,7 +37,7 @@ class ProjectFetch {
     }
     async GetById(id) {
         let result = [];
-        await fetch(`http://localhost:4000/projects/${id}`, {
+        await fetch(`${config.apiRoot}/projects/${id}`, {
             method: "get",
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -51,10 +52,11 @@ class ProjectFetch {
     }
     async Update(obj) {
         let result = [];
-        await fetch(`http://localhost:4000/projects/${obj.id}`, {
+        await fetch(`${config.apiRoot}/projects/${obj.id}`, {
             method: "put",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
+                'Authorization': 'Bearer ' + Cookies.get('token'),
             },
             body: JSON.stringify(obj)
         })

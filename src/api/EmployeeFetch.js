@@ -1,11 +1,10 @@
-import { EFAULT } from "constants";
-
-
+import config from '../config.json'
+import Cookies from 'js-cookie';
 class EmployeeFetch {
 
     async Get() {
         let result = [];
-        await fetch("http://localhost:4000/employees", {
+        await fetch(`${config.apiRoot}/employees`, {
             method: "get",
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -21,7 +20,7 @@ class EmployeeFetch {
     }
     async GetById(id) {
         let result = [];
-        await fetch(`http://localhost:4000/employees/${id}`, {
+        await fetch(`${config.apiRoot}/employees/${id}`, {
             method: "get",
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
@@ -43,10 +42,11 @@ class EmployeeFetch {
         if (isBussy.length > 0) {
             return { error: "isBusy" }
         }
-        await fetch("http://localhost:4000/employees", {
+        await fetch(`${config.apiRoot}/employees`, {
             method: "post",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
+                'Authorization': 'Bearer ' + Cookies.get('token'),
             },
             body: JSON.stringify(obj)
         })
@@ -62,10 +62,11 @@ class EmployeeFetch {
     }
     async Update(obj) {
         let result = []
-        await fetch(`http://localhost:4000/employees/${obj.id}`, {
+        await fetch(`${config.apiRoot}/employees/${obj.id}`, {
             method: "put",
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
+                'Authorization': 'Bearer ' + Cookies.get('token'),
             },
             body: JSON.stringify(obj)
         })
@@ -92,7 +93,7 @@ class EmployeeFetch {
     async AddEmployeeToProject(projectsArray, employeeId) {
         let obj2 = []
         await Promise.all(projectsArray.map(async (x) => {
-            await fetch(`http://localhost:4000/projects/${x.id}`, {
+            await fetch(`${config.apiRoot}/projects/${x.id}`, {
                 method: "get",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -123,10 +124,11 @@ class EmployeeFetch {
         })
         await Promise.all(obj2.map(async (x, index) => {
 
-            await fetch(`http://localhost:4000/projects/${x.id}`, {
+            await fetch(`${config.apiRoot}/projects/${x.id}`, {
                 method: "put",
                 headers: {
                     "Content-type": "application/json; charset=UTF-8",
+                    'Authorization': 'Bearer ' + Cookies.get('token'),
                 },
                 body: JSON.stringify(x)
             })

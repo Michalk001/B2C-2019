@@ -1,9 +1,7 @@
-
 import EmployeeFetch from "./EmployeeFetch"
 const hash = require('object-hash');
 const jwt = require('jwt-simple');
 class AuthorizationFetch {
-   // console.log(hash("Test")
 
     async SingIn(login,password){
         const hashPass = hash(password);
