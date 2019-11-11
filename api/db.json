@@ -12,18 +12,18 @@
       "projects": [
         {
           "id": "1",
-          "hours": 22,
+          "hours": 0,
           "removed": false
         },
         {
           "id": "2",
-          "hours": 46,
+          "hours": 0,
           "removed": false
         },
         {
           "id": "io85VD2",
           "removed": false,
-          "hours": 13
+          "hours": 0
         }
       ]
     },

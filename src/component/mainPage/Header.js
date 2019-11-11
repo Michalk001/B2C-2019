@@ -36,27 +36,34 @@ const Header = () => {
       <div className="header">
         <ul className="classic-menu classic-menu--lang">
           <li className="classic-menu__element">
-            {!Cookies.get('lang') || Cookies.get('lang') == "pl" && <div className="lang-button" onClick={() => { i18n.changeLanguage('en'); Cookies.set('lang', "en") }}>English</div>}
-            {Cookies.get('lang') && Cookies.get('lang') == "en" && <div className="lang-button" onClick={() => { i18n.changeLanguage('pl'); Cookies.set('lang', "pl") }}>Polski</div>}
+            <Link className="classic-menu__link classic-menu__icon classic-menu__icon--home" to={`/`} ></Link>
           </li>
+          <li className="classic-menu__element">
+            {!Cookies.get('lang') || Cookies.get('lang') == "pl" && <div className=" classic-menu__icon classic-menu__icon--flag-en" onClick={() => { i18n.changeLanguage('en'); Cookies.set('lang', "en") }}></div>}
+            {Cookies.get('lang') && Cookies.get('lang') == "en" && <div className=" classic-menu__icon classic-menu__icon--flag-pl" onClick={() => { i18n.changeLanguage('pl'); Cookies.set('lang', "pl") }}></div>}
+          </li>
+
         </ul>
         <ul className="classic-menu">
 
           {isLogin && isAdmin && <li className="classic-menu__element">
-            <Link className="classic-menu__link" to="/management">{t('common.adminPanel')}</Link>
+            <div className="classic-menu__button">
+              <Link className="classic-menu__link" to="/management">{t('common.adminPanel')}</Link>
+            </div>
           </li>}
-          <li className="classic-menu__element">
-            {isLogin && <Link className="classic-menu__link" to={`/employee/${Cookies.get('id')}`} >{t('common.userPanel')}</Link>}
 
-          </li>
           <li className="classic-menu__element">
-            {isLogin && <Link className="classic-menu__link" to={`/employee/${Cookies.get('id')}`} >{Cookies.get('firstName')} {Cookies.get('lastName')}</Link>}
-            {!isLogin && <Link className="classic-menu__link" to="/login">{t('common.singUp')}</Link>}
+            <div className="classic-menu__button">
+              {isLogin && <Link className="classic-menu__link" to={`/employee/${Cookies.get('id')}`} >{Cookies.get('firstName')} {Cookies.get('lastName')}</Link>}
+              {!isLogin && <Link className="classic-menu__link" to="/login">{t('common.singUp')}</Link>}
+            </div>
           </li>
-          <li className="classic-menu__element">
-            {isLogin && <a className="classic-menu__link" onClick={x => SingOut()} >{t('common.singOut')}</a>}
-
-          </li>
+          {isLogin &&
+            <li className="classic-menu__element">
+              <div className="classic-menu__button">
+                <a className="classic-menu__link" onClick={x => SingOut()} >{t('common.singOut')}</a>
+              </div>
+            </li>}
 
         </ul>
         <div className="hamburger">
@@ -68,7 +75,10 @@ const Header = () => {
           <div className={`hamburger__menu ${isMenuOpen ? 'hamburger__menu--active' : ""}`} >
             <ul className="hamburger__menu-lista">
               <li className="hamburger__menu-element">
-                {isLogin && <Link onClick={x => setIsMenuOpen(false)} className="hamburger__menu-link" to={`/employee/${Cookies.get('id')}`}>{Cookies.get('firstName')} {Cookies.get('secondName')}</Link>}
+                <Link className="hamburger__menu-link" to={`/`} >{t('common.home')}</Link>
+              </li>
+              <li className="hamburger__menu-element">
+                {isLogin && <Link onClick={x => setIsMenuOpen(false)} className="hamburger__menu-link" to={`/employee/${Cookies.get('id')}`}>{Cookies.get('firstName')} {Cookies.get('lastName')}</Link>}
                 {!isLogin && <Link onClick={x => setIsMenuOpen(false)} className="hamburger__menu-link" to="/login">{t('common.singUp')}</Link>}
               </li>
               {isLogin && isAdmin && <li className="hamburger__menu-element">

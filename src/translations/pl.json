@@ -42,7 +42,8 @@
         "login": "Login",
         "password": "Hasło",
         "singUpDes": "Zaloguj się",
-        "loginError": "Błędny login lub hasło"
+        "loginError": "Błędny login lub hasło",
+        "home": "Strona Główna"
     },
     "adminPanel": {
         "projectManagement": "Zarządzanie Projektami",

@@ -27,6 +27,7 @@
         "cancel": "Cancel",
         "ok": "Ok",
         "reportDownload": "Download report"
+        
     },
     "common": {
         "addHours": "Add hours",
@@ -42,7 +43,8 @@
         "login": "Login",
         "password": "Password",
         "singUpDes": "Sing Up",
-        "loginError": "Incorrect login or password"
+        "loginError": "Incorrect login or password",
+        "home": "Home"
     },
     "adminPanel": {
         "projectManagement": "Project management",

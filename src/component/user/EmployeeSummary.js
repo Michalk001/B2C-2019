@@ -62,15 +62,14 @@ const EmployeeSummary = (props) => {
 
         if (pro.hours) {
             pro.hours += res;
-
-
+            employee.totalActiveHours += res;
         }
         else
             pro.hours = parseInt(addHours[idProject], 10);
         if (pro.hours < 0)
             pro.hours = 0
-
-
+        if (employee.totalActiveHours <= 0)
+            employee.totalActiveHours = 0
         const resCha = employee.projects.find((x) => {
             return x.id == idProject
         })
