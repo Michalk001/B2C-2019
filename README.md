@@ -11,7 +11,7 @@ Project made for [contest](http://bee2code.pl/konkurs/)
 
 ## Usage
 
-Default addres is `localhost:8000`
+Default addres is `http://localhost:8000/`
 
 To using app, you need account:
 
