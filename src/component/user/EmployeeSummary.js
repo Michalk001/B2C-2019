@@ -31,6 +31,10 @@ const EmployeeSummary = (props) => {
             setIsLoading(false)
             return
         }
+        if (employeeTMP.removed) {
+            setIsLoading(false)
+            return
+        }
         setEmployeeRaw(employeeTMP);
         const projects = await getProjectList(employeeTMP.projects)
         let totalActiveHours = 0;

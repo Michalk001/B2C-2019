@@ -16,10 +16,8 @@ const Login = (props) => {
     }
     const [isError, setIsError] = useState(false)
     const { onLogin, onAdmin } = useContext(AuthContext);
-    const SingUp = async () => {
-        if (loginValue == null) {
-
-        }
+    const SingUp = async (e) => {
+        e.preventDefault()
         await auth.SingIn(loginValue.login, loginValue.password)
             .then(x => {
                 if (x.length > 0) {
@@ -48,7 +46,7 @@ const Login = (props) => {
                 <div className="user-banner__txt user-banner__txt--title">{t('common.singUpDes')}</div>
             </div>
             <div className="container">
-                <form className="user-sign-box">
+                <form className="user-sign-box" onSubmit={x => SingUp(x)}>
                     <div className="user-sign-box__content">
                         <div className="user-sign-box__txt">
                             {t('common.login')}
@@ -62,12 +60,10 @@ const Login = (props) => {
                         <input type="password" className="user-sign-box__input" name="password" onChange={x => UpdateLoginValue(x.target)} />
                     </div>
                     <div className="user-sign-box__content user-sign-box__content--button">
-                        <div className="user-sign-box__button" onClick={x => SingUp()} >
-                            {t('common.singUp')}
-                        </div>
+                        <input className="user-sign-box__button" type="submit" value=    {t('common.singUp')}></input>
                     </div>
                     {isError && <div className="user-sign-box__content user-sign-box__content--error" >
-                        <div className="user-sign-box__txt user-sign-box__txt--error">
+                        <div className="user-sign-box__txt user-sign-box__txt--error" >
                             {t('common.loginError')}
                         </div>
                     </div>}

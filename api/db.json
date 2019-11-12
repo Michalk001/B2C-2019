@@ -204,7 +204,8 @@
           "removed": false
         }
       ],
-      "id": "Dwus4MJ"
+      "id": "Dwus4MJ",
+      "removed": true
     }
   ],
   "projects": [
@@ -312,7 +313,8 @@
         {
           "employeeID": "P5Zdu15"
         }
-      ]
+      ],
+      "removed": true
     },
     {
       "name": "test",

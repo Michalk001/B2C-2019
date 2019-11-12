@@ -15,7 +15,7 @@ const Header = () => {
   const [singOut, setSingOut] = useState(false);
 
   const { isLogin, onLogout, isAdmin } = useContext(AuthContext);
-
+  const [ lang, setLang ] = useState(null)
 
 
   const SingOut = () => {
@@ -28,7 +28,15 @@ const Header = () => {
     setSingOut(true);
 
   }
-
+  useEffect(() =>{
+    if(Cookies.get('lang') || Cookies.get('lang') =="null")
+      setLang(Cookies.get('lang'))
+    else
+      {
+        setLang("en")
+        Cookies.set('lang', "en")
+      }
+  })
 
   return (
     <>
@@ -39,8 +47,8 @@ const Header = () => {
             <Link className="classic-menu__link classic-menu__icon classic-menu__icon--home" to={`/`} ></Link>
           </li>
           <li className="classic-menu__element">
-            {!Cookies.get('lang') || Cookies.get('lang') == "pl" && <div className=" classic-menu__icon classic-menu__icon--flag-en" onClick={() => { i18n.changeLanguage('en'); Cookies.set('lang', "en") }}></div>}
-            {Cookies.get('lang') && Cookies.get('lang') == "en" && <div className=" classic-menu__icon classic-menu__icon--flag-pl" onClick={() => { i18n.changeLanguage('pl'); Cookies.set('lang', "pl") }}></div>}
+            {lang == "pl" && <div className="classic-menu__icon classic-menu__icon--flag-en" onClick={() => { i18n.changeLanguage('en'); Cookies.set('lang', "en") ; setLang("en")}}></div>}
+            {lang == "en" && <div className="classic-menu__icon classic-menu__icon--flag-pl" onClick={() => { i18n.changeLanguage('pl'); Cookies.set('lang', "pl"); setLang("pl") }}></div>}
           </li>
 
         </ul>

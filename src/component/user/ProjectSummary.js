@@ -19,20 +19,25 @@ const ProjectSummary = (props) => {
     const [isCurrentUser, setIsCurrentUser] = useState(false);
     const [addHoursValue, setAddHoursValue] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
-   
-   
+
+
     const getProject = async () => {
 
         const id = props.match.params.id;
         const projectTMP = await pF.GetById(id);
-        if(!projectTMP.id){
+        if (!projectTMP.id) {
             setIsLoading(false)
             return
         }
-
+        if(projectTMP.removed == true){
+            setIsLoading(false)
+            return
+        }
         setProjectRaw(projectTMP);
-        const employees = await getEmployeesList(projectTMP.employees, id)
-
+        const employees = (await getEmployeesList(projectTMP.employees, id)).filter(x => {
+            return x.removed != true;
+        })
+        console.log(employees)
         let totalActiveHours = 0;
         employees.map(x => {
             if (!x.removed)
@@ -71,12 +76,13 @@ const ProjectSummary = (props) => {
             })
             let hours = 0;
             let removed = false;
+
             if (pro) {
                 pro.hours !== undefined ? hours = pro.hours : 0;
                 pro.removed !== undefined ? removed = pro.removed : false;
             }
-
-            employeesList.push({ id: employee.id, firstName: employee.firstName, lastName: employee.lastName, removed: removed, hours: hours })
+            if (employee.removed != true)
+                employeesList.push({ id: employee.id, firstName: employee.firstName, lastName: employee.lastName, removed: removed, hours: hours })
         }))
         return employeesList;
     }
