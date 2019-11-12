@@ -36,7 +36,8 @@ const EmployeeSummary = (props) => {
             return
         }
         setEmployeeRaw(employeeTMP);
-        const projects = await getProjectList(employeeTMP.projects)
+        const projects = (await getProjectList(employeeTMP.projects))
+            .filter(x => {return x.removed != true})
         let totalActiveHours = 0;
         projects.map(x => {
             if (!x.removed)

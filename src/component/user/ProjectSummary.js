@@ -25,6 +25,7 @@ const ProjectSummary = (props) => {
 
         const id = props.match.params.id;
         const projectTMP = await pF.GetById(id);
+
         if (!projectTMP.id) {
             setIsLoading(false)
             return
@@ -37,12 +38,12 @@ const ProjectSummary = (props) => {
         const employees = (await getEmployeesList(projectTMP.employees, id)).filter(x => {
             return x.removed != true;
         })
-        console.log(employees)
         let totalActiveHours = 0;
         employees.map(x => {
             if (!x.removed)
                 totalActiveHours += x.hours;
         })
+      
         setProject({ ...projectTMP, employees: employees, totalActiveHours: totalActiveHours })
         setIsLoading(false)
     }

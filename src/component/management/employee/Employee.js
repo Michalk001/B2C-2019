@@ -124,7 +124,7 @@ const Employee = () => {
             setInfoBox(true)
             getEmployeeList();
         })
-        
+
     }
     const deleteEmployee = async (remove) => {
         if (remove) {
@@ -189,6 +189,7 @@ const Employee = () => {
 
         if (emp.id) {
             const pro = await getProjectByEmployee(emp)
+
             setEmployeeInformation({ firstName: emp.firstName, lastName: emp.lastName, id: emp.id, phoneNumber: emp.phoneNumber, email: emp.email, ...pro })
         }
     }
@@ -197,24 +198,25 @@ const Employee = () => {
         const empPro = emp.projects.filter((x) => {
             return x.removed != true
         })
+
         let projects = []
         let totalActiveProjectsHours = 0
         let totalActiveProjects = 0
-        empPro.map((x) => {
-            if (x.hours)
-                totalActiveProjectsHours += x.hours
-        })
-        totalActiveProjects = empPro.length;
+     
         if (empPro.length > 0) {
             await Promise.all(empPro.map(async (x) => {
                 const proTmp = await pF.GetById(x.id);
                 if (proTmp.id)
-                    projects.push({ id: proTmp.id, name: proTmp.name })
+                    if (proTmp.removed != true)
+                        {
+                            projects.push({ id: proTmp.id, name: proTmp.name })
+                            if (x.hours)
+                            totalActiveProjectsHours += x.hours
+                        }
             })
             )
-
+            totalActiveProjects = projects.length;
         }
-
         return { projects, totalActiveProjectsHours, totalActiveProjects };
     }
 
@@ -252,7 +254,7 @@ const Employee = () => {
                                 </div>
                                 <div className="form-editor__content">
                                     <div className="form-editor__txt ">{t('common.phoneNumber')} </div>
-                                    <input type="text" className="form-editor__input" name="phoneNumber" onChange={x => UpdateNewEmployeeValue(x.target)} />
+                                    <input required pattern="[0-9]+" type="text" className="form-editor__input" name="phoneNumber" onChange={x => UpdateNewEmployeeValue(x.target)} />
                                 </div>
                                 <div className="form-editor__content">
                                     <div className="form-editor__txt ">{t('common.login')} </div>
@@ -264,7 +266,7 @@ const Employee = () => {
                                 </div>
                                 <div className="form-editor__content">
                                     <div className="form-editor__txt">{t('employee.email')} </div>
-                                    <input type="email" className="form-editor__input" name="email" onChange={x => UpdateNewEmployeeValue(x.target)} />
+                                    <input required type="email" className="form-editor__input" name="email" onChange={x => UpdateNewEmployeeValue(x.target)} />
                                 </div>
                                 <div className="form-editor__content">
                                     <div className="form-editor__txt">{t('employee.typeAccount')} </div>
@@ -347,11 +349,11 @@ const Employee = () => {
                                 </div>
                                 <div className="form-editor__content">
                                     <div className="form-editor__txt ">{t('employee.email')} </div>
-                                    <input type="email" className="form-editor__input" name="email" value={changeEmployeeData.email} onChange={x => UpdateEmployeeData(x.target)} />
+                                    <input required type="email" className="form-editor__input" name="email" value={changeEmployeeData.email} onChange={x => UpdateEmployeeData(x.target)} />
                                 </div>
                                 <div className="form-editor__content">
                                     <div className="form-editor__txt ">{t('common.phoneNumber')}</div>
-                                    <input type="text" className="form-editor__input" name="phoneNumber" value={changeEmployeeData.phoneNumber} onChange={x => UpdateEmployeeData(x.target)} />
+                                    <input required pattern="[0-9]+"  type="text" className="form-editor__input" name="phoneNumber" value={changeEmployeeData.phoneNumber} onChange={x => UpdateEmployeeData(x.target)} />
                                 </div>
                                 <div className="form-editor__content">
                                     <div className="form-editor__txt">{t('employee.typeAccount')} </div>

@@ -12,18 +12,18 @@
       "projects": [
         {
           "id": "1",
-          "hours": 0,
+          "hours": 36,
           "removed": false
         },
         {
           "id": "2",
-          "hours": 0,
+          "hours": 22,
           "removed": false
         },
         {
           "id": "io85VD2",
           "removed": false,
-          "hours": 0
+          "hours": 11
         }
       ]
     },
@@ -53,7 +53,7 @@
       "firstName": "Andrzej",
       "lastName": "Hunt",
       "password": "ff6fd82e76f1b4d6a11da71a25039c7b2eceef29",
-      "phoneNumber": "22",
+      "phoneNumber": "48987236458",
       "email": "Adnrzej.Hunt@xxx.pl",
       "Admin": false,
       "login": "andrzej",
@@ -124,7 +124,7 @@
       "firstName": "Edyta",
       "lastName": "Olszewska",
       "email": "Olszewska@xxx.pl",
-      "phoneNumber": "5479765373",
+      "phoneNumber": "5479765377",
       "login": "edyols",
       "password": "d5c6dfb0aa4a5fd6140f102f7fc2340989be4782",
       "isAdmin": false,
@@ -167,7 +167,7 @@
     {
       "firstName": "Anna",
       "lastName": "Głowacka",
-      "email": "Głowacka@xxx.pl",
+      "email": "Glowacka@xxx.pl",
       "phoneNumber": "23414232",
       "login": "annglo",
       "password": "a5194494c02d545a8a0d70d2e85d5d171938834d",
@@ -176,11 +176,15 @@
         {
           "id": "iCeN_-b",
           "hours": 7,
-          "removed": false
+          "removed": true
         },
         {
           "id": "Ts_sdf1",
           "hours": 10,
+          "removed": false
+        },
+        {
+          "id": "oVXIdgS",
           "removed": false
         }
       ],
@@ -248,6 +252,9 @@
       "employees": [
         {
           "employeeID": "lEXHVxa"
+        },
+        {
+          "employeeID": "P5Zdu15"
         }
       ]
     },
