@@ -106,19 +106,7 @@
             border-color: #a9c2e1;
         }
 
-        &--checkbox {
-            visibility: hidden;
-            position: absolute;
-            left: -999999999px;
-
-            &:checked+.advert-editor__button {
-                background-color: #00bffd;
-                border-color: #00bffd;
-                border-radius: 2px;
-                color: #fff;
-            }
-        }
-
+        
         &--large {
             width: 100%;
         }
