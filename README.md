@@ -4,7 +4,7 @@ Project made for [contest](http://bee2code.pl/konkurs/)
 
 ## Installation
 
-- Clone this repo use .zip file
+- Clone this repo or use .zip file
 - Open main directory in Command-line
 - `npm install` to install 
 - `npm run start` to local start 
